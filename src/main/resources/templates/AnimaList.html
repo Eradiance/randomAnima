@@ -1,0 +1,27 @@
+<html>
+<head  xmlns:th="http://www.thymeleaf.org">
+    <title>Anima List</title>
+</head>
+<body>
+<h1>Welcome</h1>
+<p>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Series</th>
+    </tr>
+    <tr th:each="anima: ${anims}">
+        <td th:text="${anima.title}"></td>
+        <td th:text="${anima.countSeries}"></td>
+    </tr>
+</table></p>
+<form method="post" action="/">
+Title: <input type="text"
+              name="title"><br />
+Price: <input type="text"
+              name="countSeries"
+              step="any"><br />
+<button value="addAnima" type="submit">Добавить</button>
+</form>
+</body>
+</html>
