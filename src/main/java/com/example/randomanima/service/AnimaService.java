@@ -1,20 +1,26 @@
 package com.example.randomanima.service;
 
 import com.example.randomanima.model.Anima;
+import com.example.randomanima.repository.AnimaRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class AnimaService {
-    private List<Anima> animaList = new ArrayList<>();
 
-    public void addAnima(Anima anima) {
-        animaList.add(anima);
+    private final AnimaRepository animaRepository;
+
+    public AnimaService(AnimaRepository animaRepository){
+        this.animaRepository = animaRepository;
     }
 
-    public List<Anima> finaAllAnim() {
-        return animaList;
+
+    public Anima addAnima(String title, Integer series) {
+        return animaRepository.addAnima(title, series);
+    }
+
+    public List<Anima> getAllAnima() {
+        return animaRepository.getAnims();
     }
 }

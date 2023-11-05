@@ -1,0 +1,30 @@
+<!Doctype HTML>
+<html>
+<head>
+    <title>Out of position</title>
+    <script src="js/index.js"></script>
+</head>
+<body>
+<h1>Hello random</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Series</th>
+    </tr>
+    </thead>
+    <tbody id="ListOfAnima">
+
+    </tbody>
+</table>
+<div>
+    <input type="text" id="title" placeholder="Anima">
+    <input type="number" id="series" placeholder="Series">
+</div>
+<p>
+    <button class="defaultButton" id="addAnima" onclick="addAnimaOnServer()">Add</button>
+    <button class="defaultButton" id="removeAnima" onclick="removeAnimaOnServer()">Remove</button>
+</p>
+<script>getAllAnimaList()</script>
+</body>
+</html>

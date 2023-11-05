@@ -1,6 +1,6 @@
-package com.example.randomanima.controlers;
+/*
+package com.example.randomanima.controler;
 
-import com.example.randomanima.model.Anima;
 import com.example.randomanima.service.AnimaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class AnimaController {
 
     @RequestMapping("/")
     public String getAnimaList(Model model){
-        var animaList = animaService.finaAllAnim();
+        var animaList = animaService.getAllAnima();
         model.addAttribute("anims", animaList);
         return "AnimaList.html";
     }
@@ -31,14 +31,13 @@ public class AnimaController {
     @PostMapping("/")
     public String addAnima(@RequestParam String title, @RequestParam Integer countSeries, Model model) {
 
-        Anima anima = new Anima();
-        anima.setTitle(title);
-        anima.setCountSeries(countSeries);
-        animaService.addAnima(anima);
+        animaService.addAnima(title, countSeries);
 
-        var amimaList = animaService.finaAllAnim();
+        var amimaList = animaService.getAllAnima();
         model.addAttribute("anims", amimaList);
 
         return "AnimaList.html";
     }
+
 }
+*/
