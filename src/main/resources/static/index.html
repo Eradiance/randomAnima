@@ -1,11 +1,22 @@
-<!Doctype HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <title>Out of position</title>
-    <script src="js/index.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Out of Position</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
-<h1>Hello random</h1>
+<h1>Hello Random</h1>
+
+<div class="form-container">
+    <input type="text" id="title" placeholder="Title">
+    <input type="number" id="series" placeholder="Series">
+    <button class="defaultButton" onclick="addAnimaOnServer()">Add Anima</button>
+    <button class="defaultButton" onclick="removeAnimaOnServer()">Remove Anima</button>
+</div>
 <table>
     <thead>
     <tr>
@@ -14,17 +25,17 @@
     </tr>
     </thead>
     <tbody id="ListOfAnima">
-
     </tbody>
 </table>
-<div>
-    <input type="text" id="title" placeholder="Anima">
-    <input type="number" id="series" placeholder="Series">
+
+<div class="button-container">
+    <button class="randomButton" onclick="randomAnima()">Random Anima</button>
 </div>
-<p>
-    <button class="defaultButton" id="addAnima" onclick="addAnimaOnServer()">Add</button>
-    <button class="defaultButton" id="removeAnima" onclick="removeAnimaOnServer()">Remove</button>
-</p>
-<script>getAllAnimaList()</script>
+
+<div id="animaContainer" class="circle-container">
+</div>
+
+<script src="js/index.js"></script>
 </body>
+
 </html>

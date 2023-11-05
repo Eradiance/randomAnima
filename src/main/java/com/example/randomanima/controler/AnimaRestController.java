@@ -6,6 +6,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.Array;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 @RestController
@@ -46,5 +49,14 @@ public class AnimaRestController {
         return ResponseEntity
                 .status(HttpStatus.ACCEPTED)
                 .body("Delete anime: " + title + " closed");
+    }
+
+    @GetMapping("/randomAnima")
+    public ResponseEntity<List<Anima>> getRandomListOfAnima() {
+        List<Anima> randomAnimaList = animaService.getAllAnima();
+        Collections.shuffle(randomAnimaList);
+        return ResponseEntity
+                .status(HttpStatus.ACCEPTED)
+                .body(randomAnimaList);
     }
 }
